@@ -1,0 +1,15 @@
+<mat-accordion>
+  <mat-expansion-panel *ngFor="let music of playlist">
+    <mat-expansion-panel-header >
+      <mat-panel-title>
+        {{music.name}}
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <div *ngIf="music.preview_url">
+      <mat-basic-audio-player  [audioUrl]="music.preview_url" [autoPlay]="false" ></mat-basic-audio-player>
+    </div>
+    <div *ngIf="!music.preview_url">
+      <h2>Music Without Preview</h2>
+    </div>
+ </mat-expansion-panel>
+</mat-accordion>
